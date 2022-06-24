@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <script src="http://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"><!-- declarando caminho para css-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTEIRINHA DE ESTUDANTE</title>
+</head>
+
+<body>
+    <input type="checkbox" id="theme-switcher">
+    <div id="app-container">
+        <div class="theme-switcher-area">
+            <label for="theme-switcher" class="theme-switcher-button"></label>
+        </div>
+
+        <div class="row" id="divPrincipal">
+            <div class="column">
+                <h2>Criar</h2><!--titulo da column-->
+                <br>
+                <label>Nome:</label>
+                <input type="text" v-model="nome">
+                <br>
+                
+                <label>Faculdade:</label>
+                <input type="text" v-model="facul">
+                <br>
+
+                <label>Curso:</label>
+                <input type="text" v-model="curso">
+                <br>
+
+                <label>Observação:</label>
+                <textarea name="" v-model="OBS"></textarea>
+                <br>
+
+                <label>R.A:</label>
+                <input type="number" v-model="RA">
+                <br>
+                
+                <label>CPF:</label>
+                <input type="number" v-model="CPF">
+                <br>
+
+                <label>RG:</label>
+                <input type="number" v-model="RG">
+                <br>
+
+                <label>Data nascimento:</label>
+                <input type="date" v-model="DtNas">
+                <br>
+
+                <label>Data de matrícula:</label>
+                <input type="date" v-model="DtMatri">
+                <br>
+
+                <form>
+                    <label>Qual seu gênero?</label>
+                    <br>
+                    <input v-model="sexo" type="radio" value="Masculino">
+                    <label>Masculino</label>
+                    <br>
+                    <input v-model="sexo" type="radio" value="Feminino">
+                    <label>Feminino</label>
+                    <br>
+                    <input v-model="sexo" type="radio" value="Prefiro não dizer">
+                    <label>Prefiro não dizer</label>
+                </form>
+                <br>
+
+                <label>Selecione o ano</label>
+                <select v-model="AnoDoCurso">
+                    <option value="1º Ano">1º Ano</option>
+                    <option value="2º Ano">2º Ano</option>
+                    <option value="3º Ano">3º Ano</option>
+                    <option value="4º Ano">4º Ano</option>
+                    <option value="5º Ano">5º Ano</option>
+                </select>
+                <br><br>
+                
+                <input v-model="checkbox" type="checkbox" id="checkbox" name="sim">
+                <label>Sim, aceito os termos de uso.</label>
+
+            </div>
+            <div class="column">
+                <img id="imgMostrar" src="perfil.png">
+                <h2>Preview</h2><!--titulo da column-->
+                <br>
+                
+                <p><b>Nome:</b> {{ nome }} </p>
+                <p><b>Faculdade:</b> {{ facul }} </p>
+                <p><b>Curso:</b> {{ curso }} </p>
+                <p><b>Obs:</b> {{ OBS }} </p>
+                <p><b>R.A:</b> {{ RA }} </p>
+                <p><b>CPF:</b> {{ CPF }} <b>RG:</b> {{ RG }} </p>
+                <p><b>Data de nasc.:</b> {{ DtNas }} </p>
+                <p><b>Matricula:</b> {{ DtMatri }} </p>
+                <p><b>Genero:</b> {{ sexo }} </p>
+                <p><b>Ano do curso:</b> {{ AnoDoCurso }} </p>
+            </div>
+        </div>
+        <div>
+            <br>
+            <button type="button">Salvar</button> 
+            <button type="button">Cancelar</button> 
+        </div>
+    </div>
+</body>
+<script src="./meuScript.JS"></script>
+
+</html>
